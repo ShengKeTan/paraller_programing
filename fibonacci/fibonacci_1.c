@@ -8,19 +8,22 @@
 #include <stdio.h>
 long int fibonacci(int n);
 
+int count = 0;
+
 /***** Begin *****/
 int main()
 {
-    int data = 0;
+    int data = 50;
     long int out = 0;
     int i = 1;
-    scanf("%d",&data);
+    //scanf("%d",&data);
     while(i <= data){
         out = fibonacci(i);
         if(i==data) printf("%ld\n",out);
         else printf("%ld ",out);
         i++;
     }
+    printf("num_size:50\ntotal_times:%d",count);
     return 0;
 }
 long int fibonacci(int n){
@@ -36,6 +39,7 @@ long int fibonacci(int n){
             a3 = a1+a2;
             a1 = a2;
             a2 = a3;
+            count++;
         }
     }
     return a3;
